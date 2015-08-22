@@ -1,10 +1,11 @@
 var React = require('react');
+var Header = require('./header');
 
 var Main = React.createClass({
   render: function() {
     return (
       <div>
-        I am a header.
+        <Header />
         {this.props.children}
       </div>
     );
