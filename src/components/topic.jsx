@@ -21,7 +21,7 @@ var Topic = React.createClass({
   },
   render: function() {
     return (
-      <div>
+      <div className="topic">
         {this.renderImages()}
       </div>
     );
