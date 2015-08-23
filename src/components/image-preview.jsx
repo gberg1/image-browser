@@ -14,6 +14,17 @@ var ImagePreview = React.createClass({
       onMouseLeave={this.handleMouseLeave}
       >
         {this.props.animated && this.state.hovering ? this.video() : this.image()}
+        {this.props.animated && !this.state.hovering ? this.icon() : null}
+        {this.state.hovering ? this.inset() : null}
+      </div>
+    );
+  },
+  inset: function() {
+    return (
+      <div className="inset">
+        Views: {this.props.views}
+        <br />
+        Upvotes: {this.props.ups}
       </div>
     );
   },
@@ -30,6 +41,12 @@ var ImagePreview = React.createClass({
           <source src={this.props.mp4} type="video/mp4"></source>
         </video>
       </div>
+    );
+  },
+  icon: function() {
+    return (
+      <span className="glyphicon glyphicon-play">
+      </span>
     );
   },
   handleMouseEnter: function() {
