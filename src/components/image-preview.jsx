@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 var ImagePreview = React.createClass({
   getInitialState: function() {
@@ -8,7 +10,8 @@ var ImagePreview = React.createClass({
   },
   render: function() {
     return (
-      <div 
+      <Link
+      to={"images/" + this.props.id}
       className="image-preview"
       onMouseEnter={this.handleMouseEnter}
       onMouseLeave={this.handleMouseLeave}
@@ -16,7 +19,7 @@ var ImagePreview = React.createClass({
         {this.props.animated && this.state.hovering ? this.video() : this.image()}
         {this.props.animated && !this.state.hovering ? this.icon() : null}
         {this.state.hovering ? this.inset() : null}
-      </div>
+      </Link>
     );
   },
   inset: function() {
