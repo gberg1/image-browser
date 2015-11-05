@@ -8,7 +8,7 @@ Image Browser
 	> npm install
 	> gulp
 
-gulp will automatically take you to localhost:8000
+--> redirects you to localhost:8000
 ```
 You will need to obtain an apiKey and apiSecret from Imgur.
 Process described below:
